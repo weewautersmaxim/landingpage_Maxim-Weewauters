@@ -21,7 +21,7 @@ var animation2 = bodymovin.loadAnimation({
   renderer: "svg",
   loop: true,
   autoplay: false,
-  path: "./assets/animations/education.json",
+  path: "./assets/Comp1.json",
 });
 
 const animationcontainer2 = document.querySelector(".animation_2");
