@@ -11,6 +11,7 @@
 		/>
 
 		<link rel="stylesheet" href="src/scss/style.css" />
+		<link rel="shortcut icon" href="#">
 		<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 	</head>
 	<body class="is-boxed has-animations">
@@ -49,17 +50,43 @@
 			<main>
 				<section class="hero text-light text-center">
 					<div class="container-sm">
-						<div class="hero-inner">
+						<div class="hero-inner" onclick="playVideo('./assets/screencast.mp4')">
 							<div class="hero-media" style="height: 440px">
-								<video width="100%" height="auto" controls>
-									<source
-										src="./assets/screencast.mp4"
-										type="video/mp4"
-									/>
-									Your browser does not support HTML video.
-								</video>
+								<div >
+									<img id="imageThumbnail" src="./assets/thumbnail.png" alt="thumbnail">
+								</div>
+								
+								<div id="videoplayer">
+									<video width="100%" height="auto" autoplay id="myvideo">
+										<source
+											src=""
+											type="video/mp4"
+										/>
+										Your browser does not support HTML video.
+									</video>
+								</div>
+							
 							</div>
 						</div>
+						<script>
+							let videoPlayer = document.getElementById("videoplayer");
+							let myVideo = document.getElementById('myvideo');
+							let thumbnail = document.getElementById("imageThumbnail")
+			
+							function playVideo(file){
+								if(videoPlayer.style.display != "block"){
+									videoPlayer.style.display = "block";
+									myVideo.src = file;
+									thumbnail.style.display = "none";
+								}
+								else{
+									videoPlayer.style.display = "none";
+									myVideo.src = "";
+									thumbnail.style.display = "block";
+								}
+							}
+			
+						</script>
 					</div>
 				</section>
 
@@ -148,7 +175,7 @@
 									<h2
 									class="section-title section-title__doelsector mt-0"
 									>
-										Onze vier doelsectoren
+									Onze missie
 									</h2>
 								</div>
 							</div>
@@ -172,7 +199,7 @@
 									<img class="imageImport" src="./assets/investments.png" alt="investments-home">
 								</div>
 								<div class="feature-extended-body">
-									<h3 class="mt-0">complementaire investeringsstijlen</h3>
+									<h3 class="mt-0">Complementaire investeringsstijlen</h3>
 									<p>
 										Sofina Private Funds – Investeringen in durf- en groeikapitaalfondsen. "39% van het eigen vermogen"
 									</p>
@@ -186,10 +213,10 @@
 								
 								</div>
 								<div class="feature-extended-body">
-									<h3 class="mt-0">eigen vermogen</h3>
+									<h3 class="mt-0">Eigen vermogen</h3>
 									<p>Met wereldwijd berijk.
 										Europa – Asië – Verenigde Staten
-										Kantoren in Brussel, Luxemburg en Singapore
+										kantoren in Brussel, Luxemburg en Singapore
 									</p>
 								</div>
 							</div>
@@ -273,7 +300,7 @@
 							</li>
 						</ul>
 						<div class="footer-copyright">
-							&copy; 2018 Evelyn, all rights reserved
+							&copy; Sofina 2021 | All rights reserved
 						</div>
 					</div>
 				</div>
@@ -282,5 +309,6 @@
 		<script src="./dist/js/main.min.js"></script>
 		<script src="./lottie.js"></script>
 		<script src="./script.js"></script>
+		
 	</body>
 </html>

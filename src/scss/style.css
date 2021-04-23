@@ -1350,8 +1350,13 @@ label {
 	height: 200px;
 	background: #ffffff;
 	border-radius: 4px 4px 0 0;
+	outline: none;
+	cursor: pointer;
 }
-
+#videoplayer {
+	display: none;
+	position: relative;
+}
 .hero-media::before {
 	content: "";
 	position: absolute;
